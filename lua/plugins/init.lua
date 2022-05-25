@@ -264,6 +264,7 @@ local plugins = {
        require('plugins.configs.octo')
     end,
    },
+   ['wfxr/minimap.vim'] = {},
 }
 
 plugins = nvchad.remove_default_plugins(plugins)
