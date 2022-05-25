@@ -17,6 +17,7 @@ local plugins = {
 
    ["NvChad/base46"] = {
       after = "packer.nvim",
+      commit = "897c90cc792cdcdecb47ae7cea1c4ce3bd2052dc",
       config = function()
          local ok, base46 = pcall(require, "base46")
 
@@ -95,7 +96,6 @@ local plugins = {
 
    -- git stuff
    ["lewis6991/gitsigns.nvim"] = {
-      opt = true,
       config = function()
          require("plugins.configs.others").gitsigns()
       end,
@@ -239,6 +239,30 @@ local plugins = {
       config = function()
          require "plugins.configs.telescope"
       end,
+   },
+   ["github/copilot.vim"] = {
+      config = function()
+         require("plugins.configs.copilot")
+      end,
+   },
+
+   ['tami5/lspsaga.nvim'] = {},
+   ['kosayoda/nvim-lightbulb'] = {},
+   ['folke/trouble.nvim'] = {
+     config = function()
+       require('plugins.configs.trouble')
+    end,
+   },
+   ['tversteeg/registers.nvim'] = {},
+   ['pwntester/octo.nvim'] = {
+     requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'kyazdani42/nvim-web-devicons',
+    },
+     config = function()
+       require('plugins.configs.octo')
+    end,
    },
 }
 

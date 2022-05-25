@@ -187,6 +187,16 @@ M.lspconfig = function()
    map("n", "<leader>wl", function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
    end)
+
+    map("n", "gr", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
+    map("n", "gx", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
+    map("x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
+    map("n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
+    map("n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
+    map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
+    map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
+    map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
+    map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
 end
 
 M.nvimtree = function()
