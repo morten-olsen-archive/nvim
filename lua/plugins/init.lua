@@ -265,6 +265,11 @@ local plugins = {
     end,
    },
    ['wfxr/minimap.vim'] = {},
+   ['Pocco81/TrueZen.nvim'] = {
+     config = function()
+       require('plugins.configs.zen')
+    end,
+   },
 }
 
 plugins = nvchad.remove_default_plugins(plugins)
