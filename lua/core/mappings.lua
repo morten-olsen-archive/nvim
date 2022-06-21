@@ -206,7 +206,7 @@ end
 
 M.telescope = function()
    map("n", "<leader>fb", "<cmd> :Telescope buffers <CR>")
-   map("n", "<leader>ff", "<cmd> :Telescope find_files <CR>")
+   map("n", "<leader>ff", "<cmd> :Telescope find_files hidden=true <CR>")
    map("n", "<leader>fa", "<cmd> :Telescope find_files follow=true no_ignore=true hidden=true <CR>")
    map("n", "<leader>cm", "<cmd> :Telescope git_commits <CR>")
    map("n", "<leader>gt", "<cmd> :Telescope git_status <CR>")

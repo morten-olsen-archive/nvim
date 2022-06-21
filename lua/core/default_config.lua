@@ -32,7 +32,7 @@ M.plugins = {
 
    options = {
       packer = {
-         init_file = "plugins.packerInit",
+         init_file = "core.packer",
          snapshot = nil,
       },
       lspconfig = {

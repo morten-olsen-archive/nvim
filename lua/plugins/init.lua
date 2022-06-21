@@ -264,7 +264,11 @@ local plugins = {
        require('plugins.configs.octo')
     end,
    },
-   ['wfxr/minimap.vim'] = {},
+   ['wfxr/minimap.vim'] = {
+      config = function()
+         require("plugins.configs.others").minimap()
+      end,
+   },
    ['Pocco81/TrueZen.nvim'] = {
      config = function()
        require('plugins.configs.zen')
