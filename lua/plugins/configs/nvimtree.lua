@@ -24,12 +24,12 @@ local options = {
    },
    view = {
       side = "left",
-      width = 25,
+      width = 35,
       hide_root_folder = true,
       relativenumber = true,
    },
    git = {
-      enable = false,
+      enable = true,
       ignore = true,
    },
    actions = {
@@ -44,6 +44,7 @@ local options = {
          enable = false,
       },
       icons = {
+        git_placement = "after",
         show = {
            folder = true,
            file = true,

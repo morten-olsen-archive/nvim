@@ -212,7 +212,6 @@ M.gitsigns = function()
 end
 
 M.minimap = function()
-  vim.g.minimap_auto_start = 1
 end
 
 return M
