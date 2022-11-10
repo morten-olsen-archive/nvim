@@ -1,3 +1,4 @@
+local map = nvchad.map
 local M = {}
 
 M.autopairs = function()
@@ -108,6 +109,17 @@ M.comment = function()
 
    nvim_comment.setup()
 end
+
+M.registers = function()
+
+   local present, registers = pcall(require, "registers")
+
+   if not present then
+      return
+   end
+   registers.setup()
+   map("n", "<leader>r", "<cmd> :Registers <CR>")
+ end
 
 M.luasnip = function()
    local present, luasnip = pcall(require, "luasnip")

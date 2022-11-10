@@ -197,20 +197,9 @@ local plugins = {
       end,
    },
 
-   ["goolord/alpha-nvim"] = {
-      disable = true,
-      config = function()
-         require "plugins.configs.alpha"
-      end,
-   },
-
    ["numToStr/Comment.nvim"] = {
       module = "Comment",
       keys = { "gc", "gb" },
-
-      setup = function()
-         require("core.mappings").comment()
-      end,
 
       config = function()
          require("plugins.configs.others").comment()
@@ -246,13 +235,16 @@ local plugins = {
       end,
    },
 
-   ['kosayoda/nvim-lightbulb'] = {},
    ['folke/trouble.nvim'] = {
      config = function()
        require('plugins.configs.trouble')
     end,
    },
-   ['tversteeg/registers.nvim'] = {},
+   ['tversteeg/registers.nvim'] = {
+     config = function()
+       require('plugins.configs.others').registers()
+    end,
+   },
    ['pwntester/octo.nvim'] = {
      requires = {
       'nvim-lua/plenary.nvim',
@@ -290,6 +282,44 @@ local plugins = {
      config = function()
        require("plugins.configs.winbar")
      end
+   },
+
+   ['karb94/neoscroll.nvim'] = {
+     config = function()
+       require('neoscroll').setup()
+       
+       local t = {}
+       t['<C-u>'] = {'scroll', {'-vim.wo.scroll', 'true', '150', [['sine']]}}
+       t['<C-d>'] = {'scroll', { 'vim.wo.scroll', 'true', '150', [['sine']]}}
+       require('neoscroll.config').set_mappings(t)
+     end
+   },
+
+   ['sindrets/diffview.nvim'] = {
+      requires = 'nvim-lua/plenary.nvim'
+   },
+
+   ['folke/twilight.nvim'] = {
+     config = function() 
+      require("twilight").setup {}
+     end
+   },
+
+   ['f-person/git-blame.nvim'] = {},
+
+   ['stevearc/aerial.nvim'] = {
+     config = function() 
+       require('aerial').setup({
+        -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+        on_attach = function(bufnr)
+          -- Jump forwards/backwards with '{' and '}'
+          vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', {buffer = bufnr})
+          vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', {buffer = bufnr})
+        end
+      })
+      -- You probably also want to set a keymap to toggle aerial
+      vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
+    end
    }
 }
 

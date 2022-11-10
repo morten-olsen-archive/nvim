@@ -20,9 +20,11 @@ true_zen.setup({
     },
   },
   integrations = {
-    vim_gitgutter = true,
-    gitsigns = true,
-    nvim_bufferline = true,
+    --vim_gitgutter = true,
+    --gitsigns = true,
+    -- nvim_bufferline = true,
+    twilight = true,
+    tmux = true
   },
 })
 
