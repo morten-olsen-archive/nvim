@@ -148,9 +148,9 @@ M.lspconfig = function()
       vim.lsp.buf.import_all()
    end)
 
-   map("n", "<leader>ca", function()
-      vim.lsp.buf.code_action()
-   end)
+   -- map("n", "<leader>ca", function()
+      --vim.lsp.buf.code_action()
+   --end)
 
    map("n", "gr", function()
       vim.lsp.buf.references()
@@ -195,8 +195,8 @@ M.lspconfig = function()
     map("n", "gk", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
     map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
     map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
-    map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
-    map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
+    -- map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
+    -- map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
 end
 
 M.nvimtree = function()

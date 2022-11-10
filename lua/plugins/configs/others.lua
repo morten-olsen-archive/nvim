@@ -121,7 +121,7 @@ M.luasnip = function()
       updateevents = "TextChanged,TextChangedI",
    }
 
-   require("luasnip.loaders.from_vscode").lazy_load()
+   -- require("luasnip.loaders.from_vscode").lazy_load()
 end
 
 M.signature = function()
@@ -209,9 +209,6 @@ M.gitsigns = function()
          changedelete = { hl = "DiffChangeDelete", text = "~", numhl = "GitSignsChangeNr" },
       },
    }
-end
-
-M.minimap = function()
 end
 
 return M

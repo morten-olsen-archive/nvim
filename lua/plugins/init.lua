@@ -8,11 +8,11 @@ end
 local plugins = {
    ["nvim-lua/plenary.nvim"] = {},
    ["lewis6991/impatient.nvim"] = {},
+   ["nathom/filetype.nvim"] = {},
 
    ["wbthomason/packer.nvim"] = {
       event = "VimEnter",
    },
-
    ["NvChad/extensions"] = {},
 
    ["NvChad/base46"] = {
@@ -27,11 +27,11 @@ local plugins = {
       end,
    },
 
-   ["NvChad/nvterm"] = {
-      config = function()
-         require "plugins.configs.nvterm"
-      end,
-   },
+   -- ["NvChad/nvterm"] = {
+   --    config = function()
+   --       require "plugins.configs.nvterm"
+   --    end,
+   -- },
 
    ["phaazon/hop.nvim"] = {
      branch = 'v1',
@@ -246,7 +246,6 @@ local plugins = {
       end,
    },
 
-   ['tami5/lspsaga.nvim'] = {},
    ['kosayoda/nvim-lightbulb'] = {},
    ['folke/trouble.nvim'] = {
      config = function()
@@ -264,16 +263,34 @@ local plugins = {
        require('plugins.configs.octo')
     end,
    },
-   ['wfxr/minimap.vim'] = {
-      config = function()
-         require("plugins.configs.others").minimap()
-      end,
-   },
    ['Pocco81/TrueZen.nvim'] = {
      config = function()
        require('plugins.configs.zen')
     end,
    },
+
+   ['ray-x/sad.nvim'] = {},
+
+   ["ThePrimeagen/harpoon"] = {
+     requires = {
+      'nvim-lua/plenary.nvim',
+    },
+     config = function()
+       require "plugins.configs.harpoon"
+     end
+   },
+
+   ["glepnir/lspsaga.nvim"] = {
+     config = function()
+       require("plugins.configs.lspsaga")
+     end
+   },
+
+   ["fgheng/winbar.nvim"] = {
+     config = function()
+       require("plugins.configs.winbar")
+     end
+   }
 }
 
 plugins = nvchad.remove_default_plugins(plugins)

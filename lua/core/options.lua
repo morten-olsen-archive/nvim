@@ -5,7 +5,7 @@ local g = vim.g
 g.did_load_filetypes = 0
 g.do_filetype_lua = 1
 g.toggle_theme_icon = "   "
-g.nvchad_theme = "radium"
+g.nvchad_theme = "tokyonight"
 
 opt.confirm = true
 opt.laststatus = 3 -- global statusline
@@ -25,7 +25,7 @@ opt.fillchars = { eob = " " }
 opt.hidden = true
 opt.ignorecase = true
 opt.smartcase = true
-opt.mouse = "a"
+--opt.mouse = "a"
 
 -- Numbers
 opt.number = true

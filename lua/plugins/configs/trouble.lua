@@ -4,4 +4,4 @@ require("trouble").setup {
   use_diagnostic_signs = true,
 }
 
-map("n", "gl", "<cmd> :TroubleToggle<CR>")
+map("n", "<leader>t", "<cmd> :TroubleToggle<CR>")

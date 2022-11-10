@@ -78,6 +78,8 @@ lspconfig.tsserver.setup {
    capabilities = capabilities,
 }
 
+lspconfig.prismals.setup {}
+
 -- requires a file containing user's lspconfigs
 local addlsp_confs = nvchad.load_config().plugins.options.lspconfig.setup_lspconf
 
