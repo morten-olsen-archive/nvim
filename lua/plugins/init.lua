@@ -305,8 +305,6 @@ local plugins = {
      end
    },
 
-   ['f-person/git-blame.nvim'] = {},
-
    ['stevearc/aerial.nvim'] = {
      config = function() 
        require('aerial').setup({

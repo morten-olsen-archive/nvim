@@ -16,8 +16,8 @@ function M.on_attach(client, _)
 end
 
 function M.on_attach_formatter(client, _)
-   client.server_capabilities.document_formatting = true 
-   client.server_capabilities.document_range_formatting = true 
+   client.server_capabilities.documentFormattingProvider = true
+   client.server_capabilities.documentRangeFormattingProvider = true
 
    require("core.mappings").lspconfig()
 end
